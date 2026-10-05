@@ -1,7 +1,7 @@
 ---
 name: update-github-info
 description: Refresh the GitHub Info page with concise, practical updates from official GitHub sources.
-model: gpt-4.1
+model: gpt-5.6
 on:
   schedule: daily
   workflow_dispatch:
