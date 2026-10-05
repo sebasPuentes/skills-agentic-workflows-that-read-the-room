@@ -1,26 +1,28 @@
 ---
 name: update-github-info
-description: Draft website updates for Mona's GitHub Info site from official GitHub sources.
-model: gpt-4.1
+description: Refresh the GitHub Info page with concise, practical updates from official GitHub sources.
+engine:
+  id: copilot
+  model: gpt-4.1
 on:
+  schedule: daily
   workflow_dispatch:
-  schedule:
-    - cron: '17 9 * * *'
-safe-outputs:
-  create-pull-request:
-    title-prefix: "[mona] "
-    draft: true
-    fallback-as-issue: false
-    allowed-files:
-      - site/content/github-info.md
+permissions:
+  contents: read
 tools:
-  edit:
+  github:
+    toolsets: [repos]
   web-fetch:
+  edit:
 network:
   allowed:
     - github.blog
     - github.com
     - awesome-copilot.github.com
+safe-outputs:
+  create-pull-request:
+    max: 1
+    draft: true
 ---
 
 # Update Mona's GitHub Info website
