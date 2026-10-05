@@ -37,12 +37,15 @@ Use these sources:
 - Awesome Copilot workflows: https://awesome-copilot.github.com/workflows/
 
 Use web fetch for the GitHub Blog, GitHub Changelog, and Awesome Copilot
-workflows URLs. When consulting repository guidance or reference files, use
+workflows URLs. If one of these URLs cannot be fetched because of network or
+DNS limits, continue with the remaining available sources and `notes/mona-notes.md`
+instead of stopping. When consulting repository guidance or reference files, use
 GitHub repository API tools rather than terminal, CLI, or sandboxed commands.
 
 Update `site/content/github-info.md` with concise, practical updates for
 readers, and include source context whenever content comes from the GitHub Blog
-or GitHub Changelog. Keep changes limited to that file.
+or GitHub Changelog. Always include or refresh a `Last reviewed (UTC): YYYY-MM-DD`
+line so each run produces a reviewable update. Keep changes limited to that file.
 
 Open a pull request for Mona to review. Use a pull request title that mentions
 Mona or GitHub Info. Do not write directly to `main`; rely on
